@@ -1,7 +1,9 @@
 <?php
 $customer_list = array(
-    "0" => array("name" => " Hoàng Thế Lưu", "date_of_birth" => "1997/01/01", "address" => "HÀ Nội", "image" => "image/img1.jpg"),
-    "1" => array("name" => " Hoàng Thế Hòa", "date_of_birth" => "1997/10/10", "address" => "Ha Noi", "image" => "image/img1.jpg")
+    "0" => array("name" => " Hoàng Thế Lưu", "date_of_birth" => "1997/11/10", "address" => "HÀ Nội", "image" => "image/img1.jpg"),
+    "1" => array("name" => " Nguyễn Đình Tuấn", "date_of_birth" => "1997/11/5", "address" => "Bắc ninh", "image" => "image/img1.jpg"),
+    "2" => array("name" => " Nguyễn Đình Thành ", "date_of_birth" => "1997/11/9", "address" => "hải Phong", "image" => "image/img1.jpg"),
+    "3" => array("name" => " Nguyễn Thị Quỳnh ", "date_of_birth" => "1997/11/11", "address" => "Sóc Son ", "image" => "image/img1.jpg")
 );
 function searchByDate($customers, $from_date, $to_date)
 {
@@ -16,22 +18,25 @@ function searchByDate($customers, $from_date, $to_date)
         if (!empty($to_date) && (strtotime($customer["date_of_birth"]) > strtotime($to_date))) {
             continue;
         }
+//        echo "<pre>";
+//        print_r($customer);
+//        echo "</pre>";
         $filtered_customers[] = $customer;
     }
     return $filtered_customers;
 }
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport"-->
+<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--    <title>Document</title>-->
+<!--    <link rel="stylesheet" href="style.css">-->
+<!--</head>-->
+<!--<body>-->
 <?php
 $from_date = NULL;
 $to_date = NULL;
@@ -57,11 +62,6 @@ $filtered_customers = searchByDate($customer_list, $from_date, $to_date);
         <td>Địa chỉ</td>
         <td>Ảnh</td>
     </tr>
-    <!--    --><?php //if (count($filtered_customers) === 0): ?>
-    <!--        <tr>-->
-    <!--            <td colspan="5" class="message">Không tìm thấy khách hàng nào</td>-->
-    <!--        </tr>-->
-    <!--    --><?php //endif; ?>
 
     <?php foreach ($filtered_customers as $index => $customer): ?>
         <tr>

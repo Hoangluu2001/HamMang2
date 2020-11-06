@@ -28,7 +28,7 @@ $array2 = array("2" => "twenty",
     "8" => "eighty",
     "9" => "ninety",
 );
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+if ($_SERVER["REQUEST_METHOD"] == 'GET') {
     $num = $_GET["number"];
     if ($num < 0) {
         echo "nhap lai";

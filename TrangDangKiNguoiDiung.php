@@ -5,6 +5,8 @@
     <title>Title</title>
 </head>
 <body>
+<fieldset style="width: 300px">
+    <legend>TRANG DANG KI NGUOI DUNG</legend>
 <p><b>Họ và tên:</b></p>
 <input type="text" name="name">
 <p><b>Email:</b></p>
@@ -17,7 +19,7 @@
 <br><br>
 <input type="submit" name="submit" value="Đăng ký">
 
-
+</fieldset>
 
 </body>
 </html>
