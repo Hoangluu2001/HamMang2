@@ -7,20 +7,19 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] = $_POST) {
     $number = $_POST['nhap'];
-}
-function checkMin($number)
-{
-    $min = $number[0];
-    $length = count($number);
+    $array = explode (",", $number);
+
+    $min = $array[0];
+    $length = count($array);
     for ($i = 0; $i < $length; $i++) {
-        if ($min < $number[i]) {
-            $min = $number[$i];
+        if ( $array[$i] < $min ) {
+            $min = $array[$i];
         }
     }
-    return $min;
+    echo $min;
 }
 
 
-echo checkMin($number);
+
 ?>
 
